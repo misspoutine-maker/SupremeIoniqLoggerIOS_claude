@@ -1,6 +1,6 @@
 name: SupremeIoniq6Logger
 options:
-  bundleIdPrefix: com.supreme
+  bundleIdPrefix: com.supreme.Ioniq6Logger
   deploymentTarget:
     iOS: "15.0"
 targets:
