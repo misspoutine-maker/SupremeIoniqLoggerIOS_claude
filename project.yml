@@ -1,8 +1,13 @@
 name: SupremeIoniq6Logger
 options:
-  bundleIdPrefix: com.supreme.Ioniq6Logger
+  bundleIdPrefix: com.supreme
   deploymentTarget:
     iOS: "15.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
 targets:
   SupremeIoniq6Logger:
     type: application
@@ -11,14 +16,17 @@ targets:
     info:
       path: Sources/Info.plist
       properties:
-        CFBundleDisplayName: Supreme Ioniq6
-        CFBundleShortVersionString: "1.0"
-        CFBundleVersion: "1"
+        CFBundleDisplayName: Supreme Ioniq 6
         UILaunchScreen: {}
-        NSLocationWhenInUseUsageDescription: Suivi de trajet
-        NSLocationAlwaysAndWhenInUseUsageDescription: Suivi de trajet en arrière-plan
-        NSBluetoothAlwaysUsageDescription: Connexion au lecteur OBD2
+        UIRequiredDeviceCapabilities: [bluetooth-le]
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
         UIBackgroundModes: [location, bluetooth-central]
+        NSBluetoothAlwaysUsageDescription: Connects to the OBD2 adapter to read the battery data.
+        NSLocationWhenInUseUsageDescription: Tracks speed, distance and place during trips.
+        NSLocationAlwaysAndWhenInUseUsageDescription: Keeps tracking trips with the screen off.
+        NSMotionUsageDescription: Uses the barometer to measure altitude.
     settings:
-      PRODUCT_BUNDLE_IDENTIFIER: com.supreme.ioniq6logger
-      SWIFT_VERSION: "5.0"
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.supreme.ioniq6logger
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
